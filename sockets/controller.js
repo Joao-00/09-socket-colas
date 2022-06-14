@@ -27,6 +27,9 @@ const socketController = (socket) => {
         }
 
         const ticket = ticketControl.atenderTicket(escritorio);
+
+        //TODO: notificar cambio en los ultimos 4
+
         if (!ticket) {
             callback({
                 ok: false,
