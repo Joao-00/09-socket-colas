@@ -3,7 +3,7 @@ const fs = require('fs');
 
 
 class Ticket {
-    constructor(numero){
+    constructor(numero, escritorio){
         this.numero = numero;
         this.escritorio = escritorio;
     }
@@ -48,7 +48,7 @@ class TicketControl{
         fs.writeFileSync(dbPath, JSON.stringify(this.toJson));
     }
 
-    siguente(){
+    siguiente(){
         this.ultimo += 1;
         const ticket = new Ticket(this.ultimo, null);
         this.tickets.push(ticket);
@@ -85,6 +85,4 @@ class TicketControl{
 }
 
 
-module.exports = {
-    TicketControl,
-}
+module.exports =  TicketControl;
